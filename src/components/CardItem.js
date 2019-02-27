@@ -9,7 +9,7 @@ import {
   Button
 } from "reactstrap";
 
-export default function CardItem() {
+export default function CardItem(props) {
   return (
     <Card>
       <CardImg
@@ -19,13 +19,10 @@ export default function CardItem() {
         alt="Card image cap"
       />
       <CardBody>
-        <CardTitle>Card title</CardTitle>
-        <CardSubtitle>Card subtitle</CardSubtitle>
-        <CardText>
-          Some quick example text to build on the card title and make up the
-          bulk of the card's content.
-        </CardText>
-        <Button>Button</Button>
+        <CardTitle>{props.title}</CardTitle>
+        <CardSubtitle>{props.subtitle}</CardSubtitle>
+        <CardText>{props.text}</CardText>
+        <Button>{props.button}</Button>
       </CardBody>
     </Card>
   );
