@@ -25,7 +25,7 @@ export default function MainNavBar() {
               </NavLink>
             </NavItem>
             <NavItem>
-              <NavLink tag={NavLinkRouterDOM} to="/playground/">
+              <NavLink tag={NavLinkRouterDOM} to="/playground">
                 Playground
               </NavLink>
             </NavItem>

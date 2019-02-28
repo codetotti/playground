@@ -21,7 +21,7 @@ export default function Home() {
         </p>
       </Jumbotron>
       <Row>
-        <Col xs="4" sm="4">
+        <Col sm="4">
           <CardItem
             title="Sample1"
             subtitle="SubSample1"
@@ -29,7 +29,7 @@ export default function Home() {
             button="Click"
           />
         </Col>
-        <Col xs="4" sm="4">
+        <Col sm="4">
           <CardItem
             title="Sample2"
             subtitle="SubSample2"
@@ -37,7 +37,7 @@ export default function Home() {
             button="Click"
           />
         </Col>
-        <Col xs="4" sm="4">
+        <Col sm="4">
           <CardItem
             title="Sample3"
             subtitle="SubSample3"

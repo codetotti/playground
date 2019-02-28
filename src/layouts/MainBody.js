@@ -7,14 +7,10 @@ import { Switch, Route } from "react-router-dom";
 export default function MainBody() {
   return (
     <>
-      <Container fluid="true">
+      <Container fluid={true}>
         <Switch>
           <Route exact path="/" component={Home} />
-          <Route exact path="/playground" component={Playground} />
-          {/*<Route exact path="/" component={Home} />
-            <Route path="/first" component={First} />
-            <Route path="/second" component={Second} />
-            <Route path="/third" component={Third} />*/}
+          <Route path="/playground" component={Playground} />
         </Switch>
       </Container>
     </>
