@@ -49,11 +49,12 @@ export default function({ modal, setIsModalActive }) {
   return (
     <>
       <Formik
-        initialValues={{ title: "", subtitle: "", content: "" }}
+        initialValues={{ title: "mr", name: "", gender: "", email: "" }}
         validationSchema={yup.object().shape({
-          title: yup.string().required("Please fill title."),
-          subtitle: yup.string().required("Please fill subtitle."),
-          content: yup.string().required("Please fill content.")
+          title: yup.string().required("Please select title"),
+          name: yup.string().required("Please fill name."),
+          gender: yup.string().required("Please fill gender."),
+          email: yup.string().required("Please fill email.")
         })}
         // onSubmit={values => onSubmit(values)}
         render={({
@@ -69,48 +70,63 @@ export default function({ modal, setIsModalActive }) {
               <ModalHeader>New Group</ModalHeader>
               <ModalBody>
                 <Row>
-                  <Col md={6}>
+                  <Col md={12}>
+                    <Label for="groupTitle">Title</Label>
+                    <FormGroup check>
+                      <Label check>
+                        <Input type="radio" name="title" value={values.title} />{" "}
+                        Mr
+                      </Label>
+                    </FormGroup>
+                    <FormGroup check>
+                      <Label check>
+                        <Input type="radio" name="title" /> Ms
+                      </Label>
+                    </FormGroup>
+                    <FormGroup check>
+                      <Label check>
+                        <Input type="radio" name="title" /> Miss
+                      </Label>
+                    </FormGroup>
+                  </Col>
+                  <Col md={12}>
                     <FormGroup>
-                      <Label for="groupTitle">Title</Label>
+                      <Label for="groupTitle">Name</Label>
                       <Input
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        value={values.title}
-                        invalid={touched.title && !!errors.title}
+                        value={values.name}
+                        invalid={touched.name && !!errors.name}
                         type="text"
-                        name="title"
-                        placeholder="Group Title"
+                        name="name"
+                        placeholder="Name"
                       />
-                      {touched.title && !!errors.title && (
-                        <FormFeedback>{errors.title}</FormFeedback>
+                      {touched.name && !!errors.name && (
+                        <FormFeedback>{errors.name}</FormFeedback>
                       )}
                     </FormGroup>
                   </Col>
-                  <Col md={6}>
+                  <Col md={12}>
                     <FormGroup>
-                      <Label for="groupSubtitle">Subtitle</Label>
+                      <Label for="groupSubtitle">Gender</Label>
                       <Input
                         onChange={handleChange}
                         onBlur={handleBlur}
-                        value={values.subtitle}
-                        invalid={touched.subtitle && !!errors.subtitle}
+                        value={values.gender}
+                        invalid={touched.gender && !!errors.gender}
                         type="text"
-                        name="subtitle"
-                        placeholder="Group Subtitle"
+                        name="gender"
+                        placeholder="Gender"
                       />
-                      {touched.subtitle && !!errors.subtitle && (
-                        <FormFeedback>{errors.subtitle}</FormFeedback>
+                      {touched.gender && !!errors.gender && (
+                        <FormFeedback>{errors.gender}</FormFeedback>
                       )}
                     </FormGroup>
                   </Col>
-                  <Col md={6}>
+                  <Col md={12}>
                     <FormGroup>
-                      <Label for="groupContent">Content</Label>
-                      <Input
-                        type="text"
-                        name="content"
-                        placeholder="Group Content"
-                      />
+                      <Label for="groupContent">Email</Label>
+                      <Input type="text" name="email" placeholder="Email" />
                     </FormGroup>
                   </Col>
                 </Row>

@@ -13,6 +13,15 @@ export default function PlaygroundNavBar() {
           </NavLink>
         </NavItem>
         <NavItem>
+          <NavLink
+            tag={NavLinkRouterDOM}
+            to="/playground/normal-form"
+            breadcrumbs={["Playground", "Normal Form"]}
+          >
+            Normal Form
+          </NavLink>
+        </NavItem>
+        <NavItem>
           <NavLink href="#">Example 2</NavLink>
         </NavItem>
       </Nav>

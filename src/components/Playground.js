@@ -17,7 +17,22 @@ export default function Playground({ match }) {
             <Switch>
               <Route
                 path={`${match.url}/popup-form`}
-                component={ContentListComponent}
+                // component={ContentListComponent}
+                render={props => (
+                  <ContentListComponent
+                    {...props}
+                    breadcrumbs={["Playground", "Popup Form"]}
+                  />
+                )}
+              />
+              <Route
+                path={`${match.url}/normal-form`}
+                render={props => (
+                  <ContentListComponent
+                    {...props}
+                    breadcrumbs={["Playground", "Normal Form"]}
+                  />
+                )}
               />
             </Switch>
           </Row>
